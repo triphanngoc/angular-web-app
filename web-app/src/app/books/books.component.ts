@@ -48,7 +48,7 @@ export class BooksComponent implements OnInit {
   BookDetailsToEdit(id: string) {
     this.bookService.getBookDetailsById(id).subscribe(bookResult => {
       this.Id = bookResult.Id;
-      this.bookForm.controls['BookName'].setValue(bookResult.BookName);      
+      this.bookForm.controls['BookName'].setValue(bookResult.BookName);
       this.bookForm.controls['Description'].setValue(bookResult.Description);
       this.bookForm.controls['Author'].setValue(bookResult.Category);
       this.bookForm.controls['Category'].setValue(bookResult.Author);
@@ -79,13 +79,13 @@ export class BooksComponent implements OnInit {
     localStorage.removeItem("jwt");
     this.router.navigate(["/"]);
   }
-  isUserAuthenticated() {
-    const token = localStorage.getItem("jwt");
-    if (token && !this.jwtHelper.isTokenExpired(token)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
+  // isUserAuthenticated() {
+  //   const token = localStorage.getItem("jwt");
+  //   if (token && !this.jwtHelper.isTokenExpired(token)) {
+  //     return true;
+  //   }
+  //   else {
+  //     return false;
+  //   }
+  // }
 }
